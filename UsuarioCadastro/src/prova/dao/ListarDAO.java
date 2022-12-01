@@ -37,8 +37,8 @@ public class ListarDAO {
                 produtos.add(produto);
             }
             return produtos;
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
         }
 
         return produtos;

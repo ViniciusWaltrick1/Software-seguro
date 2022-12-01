@@ -13,21 +13,21 @@ public class CadastroDAO {
         con = new Conexao();
     }
 
-    public Boolean cadastrarusuario(Usuario u){
+    public Boolean cadastrarusuario(Usuario usuario){
 
         try{
             String query = "insert into usuarios values (?, ?, ?, ?)";
             ps = con.getConexao().prepareStatement(query);
 
-            if (u.getEmail() == null || u.getNome() == null || u.getCpf() == null || u.getSenha() == null) {
+            if (usuario.getEmail() == null || usuario.getNome() == null || usuario.getCpf() == null || usuario.getSenha() == null) {
                 return false;
-            }else if (u.getEmail().isEmpty() || u.getNome().isEmpty() || u.getCpf().isEmpty() || u.getSenha().isEmpty()) {
+            }else if (usuario.getEmail().isEmpty() || usuario.getNome().isEmpty() || usuario.getCpf().isEmpty() || usuario.getSenha().isEmpty()) {
                 return false;
             }else{
-                ps.setString(1, u.getEmail());
-                ps.setString(2, u.getNome());
-                ps.setString(3, u.getCpf());
-                ps.setString(4, u.getSenha());
+                ps.setString(1, usuario.getEmail());
+                ps.setString(2, usuario.getNome());
+                ps.setString(3, usuario.getCpf());
+                ps.setString(4, usuario.getSenha());
 
                 ps.execute();
 

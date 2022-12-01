@@ -39,8 +39,8 @@ public class AutenticacaoDAO {
                     return false;
             }
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
         }
         return false;
     }
